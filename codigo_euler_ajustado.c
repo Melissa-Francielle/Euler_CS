@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 
 #define NUM_ITERACOES 30
 
@@ -14,22 +14,22 @@ int main() {
 
     // Vamos iterar de n=1 até um número razoável definido em constante global
     for (int n = 1; n <= NUM_ITERACOES; n++) {
-        // Calcula o termo atual (1/n!) a partir do termo anterior (1/(n-1)!)
-        // Ex: 1/3! = (1/2!) / 3
-        termo = termo / n;
+    // Calcula o termo atual (1/n!) a partir do termo anterior (1/(n-1)!)
+    // Ex: 1/3! = (1/2!) / 3
+    termo = termo / n;
 
-        // incremente o termo atual a cada tipo de ponto flutuante
-        // converta explicitamente se for preciso
-        e_float += (float)termo;
-        e_double += (double)termo;
-        e_long += termo;
+    // incremente o termo atual a cada tipo de ponto flutuante
+    // converta explicitamente se for preciso
+    e_float += (float)termo;
+    e_double += (double)termo;
+    e_long += termo;
 
-        // Imprima 'n', 'termo', 'e_float', 'e_double' e 'e_long'.
-        printf("n=%2d | termo=%Le | e_float=%.10f | e_double=%.15lf | e_long=%.20Lf\n",
-               n, termo, e_float, e_double, e_long);
+     // Imprima 'n', 'termo', 'e_float', 'e_double' e 'e_long'.
+     // Use os especificadores de formato corretos para cada tipo!
+     printf("n=%2d | termo=%Le | e_float=%.10f | e_double=%.15lf | e_long=%.20Lf\n",
+         n, termo, e_float, e_double, e_long);
     }
-
-    printf("\n\nValor de referência para 'e': 2.718281828459045...\n");
+    printf("\n\nValor de referencia para 'e': 2.718281828459045...\n");
 
     return 0;
 }
